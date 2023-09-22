@@ -11,7 +11,7 @@ const server = express();
 
 server.use(session({
   name: 'chocolatechip',
-  secret: 'shhh',
+  secret: 'shh',
   saveUninitialized: false ,
   resave: false,
   store: new Store({
@@ -19,13 +19,12 @@ server.use(session({
     createTable: true,
     clearInterval: 1000 * 60  * 10,
     tablename: 'sessions',
-    sidfieldname: 'sid,'
+    sidfieldname: 'sid'
   }),
   cookie: {
     maxAge: 1000 * 60 * 10,
     secure: false,
     httpOnly: true,
-    sameSite: ''
   }
 }))
 server.use(helmet());
